@@ -56,7 +56,34 @@ std::string UserSpeech()
 
 std::string* SToWords(std::string str)
 {
-    //FIXME
+    std::string* words = new std::string [50];    //50 - to be sure
+    //std::string::iterator tmp = str.begin();
+
+    int word_counter = 0;
+    int char_counter = 0;
+
+    char buff[100];
+
+    std::string::iterator iter = str.begin();
+    while(iter != str.end()){
+        if(isalnum(*iter)){
+            //add to word
+            buff[char_counter] = *iter;
+            char_counter++;
+        }else if(isspace(*iter) || isprint(*iter)){
+            //next word
+            words[word_counter].assign(buff, char_counter);
+            word_counter++;
+            char_counter = 0;
+        }else{
+            //FIXME
+        }
+        iter++;
+    };
+
+    //CHECK IF SEVERAL SPACES, DOTS ETC FOLLOW EACH OTHER
+
+    return words;
 }
 
 int WordsNum(std::string str)
