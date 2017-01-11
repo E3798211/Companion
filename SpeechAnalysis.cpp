@@ -62,6 +62,8 @@ std::string* SToWords(std::string str)
     int word_counter = 0;
     int char_counter = 0;
 
+    bool status;    //true - prev was char, false - prev was special symbol
+
     char buff[100];
 
     std::string::iterator iter = str.begin();
@@ -70,11 +72,15 @@ std::string* SToWords(std::string str)
             //add to word
             buff[char_counter] = *iter;
             char_counter++;
+            status = true;
         }else if(isspace(*iter) || isprint(*iter)){
             //next word
-            words[word_counter].assign(buff, char_counter);
-            word_counter++;
-            char_counter = 0;
+            if(status == true){
+                words[word_counter].assign(buff, char_counter);
+                word_counter++;
+                char_counter = 0;
+            }
+            status = false;
         }else{
             //FIXME
         }

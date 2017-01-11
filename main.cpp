@@ -23,12 +23,19 @@ int main()
     //Getting User's sentence. Sentence must be correct now.
     speech = UserSpeech();
     words = SToWords(speech);
+
+    cout << "[0]: " << words[0] << "\n[1]: " << words[1]
+         << "\n[2]: " << words[2] << "\n[3]: " << words[3]
+         << "\n[4]: " << words[4] << "\n[5]: " << words[5];
     //words_num = WordsNum(speech);
 
     //cout << words_num;
 
 
-    //CHECK SToWords() FOR SEVERAL DOTS, SPACES ETC ! ! !
+    //CHECK SToWords() FOR SEVERAL DOTS, SPACES ETC ! ! ! //Checked.
+
+
+    //LOOK FOR ARROW IN USERSPEECH
 
 
     //first check for punctuation, second - if word exist (no 'strange' symbols)
