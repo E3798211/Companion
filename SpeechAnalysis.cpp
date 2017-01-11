@@ -59,4 +59,8 @@ std::string* SToWords(std::string str)
     //FIXME
 }
 
+int WordsNum(std::string str)
+{
+    //FIXME
+}
 

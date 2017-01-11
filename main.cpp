@@ -10,6 +10,7 @@ int main()
 {
     string speech;
     string* words;
+    int words_num;
 
     //Some pre-. "Be correct", "put dots", etc
     cout << "Hello! Let's begin our conversation.\nPlease, enter everything correctly. "
@@ -20,6 +21,7 @@ int main()
     //Getting User's sentence. Sentence must be correct now.
     speech = UserSpeech();
     //words = SToWords(speech);
+    //words_num = WordsNum(speech);
 
     //first check for punctuation, second - if word exist (no 'strange' symbols)
 
