@@ -94,6 +94,23 @@ std::string* SToWords(std::string str)
 
 int WordsNum(std::string str)
 {
-    //FIXME
+    int words_amount = 0;
+    std::string::iterator iter = str.begin();
+
+    bool status;    //true - previous was char, false - previous was special symbol
+
+    while(iter != str.end()){
+        if(isalnum(*iter)){
+            status = true;
+        }else if(isspace(*iter) || isprint(*iter)){
+            //new word appeared
+            if(status == true){
+                words_amount++;
+            }
+            status = false;
+        }
+        iter++;
+    }
+    return words_amount;
 }
 

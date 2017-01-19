@@ -21,13 +21,14 @@ int main()
          << "Write just one sentence. You start.\n";
 
     //Getting User's sentence. Sentence must be correct now.
-    speech = UserSpeech();
-    words = SToWords(speech);
+    speech = UserSpeech();              //getting User's input
+    words = SToWords(speech);           //breaking sentence into words
+    words_num = WordsNum(speech);       //counting words
 
-    cout << "[0]: " << words[0] << "\n[1]: " << words[1]
-         << "\n[2]: " << words[2] << "\n[3]: " << words[3]
-         << "\n[4]: " << words[4] << "\n[5]: " << words[5];
-    //words_num = WordsNum(speech);
+    for(int i = 0; i < words_num; i++)
+        cout << "[" << i << "]\t" << words[i] << "\n";
+
+    cout << words_num;
 
     //cout << words_num;
 
