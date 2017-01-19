@@ -120,7 +120,7 @@ std::string GeneralAnalysis(std::string str, std::string* words,
     int speech_type = SpeechType(str, words, words_amount);
 
 
-    if(speech_type == 1){
+    if(speech_type == 0){
         info = QuestionAnalysis(str, words, words_amount);
         std::cout << "\nTo QuestionAnalysis\n";
     }else{
@@ -134,8 +134,8 @@ std::string GeneralAnalysis(std::string str, std::string* words,
 int SpeechType(std::string str, std::string* words, int words_amount)
 {
     if(str.at(str.length() - 1) == '?')
-        return 1;       //question type
-    else return 2;      //statement type
+        return 0;       //question type
+    else return 1;      //statement type
 }
 
 
@@ -145,7 +145,7 @@ std::string QuestionAnalysis(std::string str, std::string* words, int words_amou
     std::string tmp;
 
     std::string sent_info;
-    sent_info.append("1");
+    sent_info.append("0");
 
     //FIXME
     return sent_info;
@@ -156,7 +156,7 @@ std::string StatementAnalysis(std::string str, std::string* words, int words_amo
     std::string tmp;
 
     std::string sent_info;
-    sent_info.append("2");
+    sent_info.append("1");
     //FIXME
     return sent_info;
 }
