@@ -13,12 +13,11 @@ int main()
     int words_num;
 
     //Some pre-. "Be correct", "put dots", etc
-    cout << "Hello! Let's begin our conversation.\nPlease, enter everything correctly. "
-         << "Mistakes may cause some troubles,\n"
-         << "I will probably misunderstand you. Please, always put marks (?).\n"
-         << "Do not write long sentences (more than 5 words till now).\n"
-         << "Do not use predlogi (?) [sorry for that].\n"
-         << "Write just one sentence. You start.\n";
+    cout << "Hello! Let's begin our conversation.\n"
+         << "Please, enter everything correctly. Mistakes may cause some troubles,\n"
+         << "I will probably misunderstand you. Please, always put punctuation marks.\n"
+         << "Do not write long sentences [more than 5 words till now].\n"
+         << "Write just one sentence [temporarily]. You start.\n";
 
     //Getting User's sentence. Sentence must be correct now.
     speech = UserSpeech();              //getting User's input

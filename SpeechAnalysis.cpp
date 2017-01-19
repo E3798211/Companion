@@ -29,21 +29,21 @@ std::string UserSpeech()
     //Check if everything is ok and correcting User's sentence.
     do{
         status = IsCorrect(str);
-        std::cout << "status check\n";
 
         if(status == 1){
             std::cout << "\nPlease, do not send empty messages.\n";
             std::cout << "\n\t -> ";
             std::getline(std::cin, str);
         }else if(status == 2){
-            std::cout << "\nPlease, put lasting (?) to your sentence.\n";
+            std::cout << "\nPlease, put punctuation mark to the end.\n";
             std::cout << "\n\t -> ";
             std::getline(std::cin, str);
         }else if(status == 3){
-            std::cout << "\nPlease, start message with alphabet.\n";
+            std::cout << "\nPlease, start message with letter.\n";
             std::cout << "\n\t -> ";
             std::getline(std::cin, str);
         }
+
     }while(status != 0);
 
     return str;
