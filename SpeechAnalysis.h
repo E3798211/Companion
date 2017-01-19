@@ -3,9 +3,10 @@
 
 #include <string>
 
-std::string UserSpeech();                                       //Returns User's sentence
-std::string* SToWords(std::string str);                         //Returns array of words
-int WordsNum(std::string str);                                  //Returns amount of words
-void WordsPrepare(std::string* & words, int words_amount);//Prepare words. All "ToLower"
+std::string UserSpeech();                                               //Returns User's sentence
+std::string* SToWords(std::string str);                                 //Returns array of words
+int WordsNum(std::string str);                                          //Returns amount of words
+void WordsPrepare(std::string* & words, int words_amount);              //Prepare words. All "ToLower"
+int SpeechType(std::string str, std::string* words, int words_amount);  //Returns type of sentence
 
 #endif // SPEECHANALYSIS_H_INCLUDED

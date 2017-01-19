@@ -11,6 +11,7 @@ int main()
     string speech;      //User's input
     string* words;      //User's input broken into words
     int words_num;      //Amount of words in User's input
+    int sentence_type;  //We need it to understand how to work with speech
 
     //Some pre-. "Be correct", "put dots", etc
     cout << "Hello! Let's begin our conversation.\n"
@@ -25,6 +26,10 @@ int main()
     words_num = WordsNum(speech);           //counting words
     WordsPrepare(words, words_num);         //Preparing words for searching in memory for coincidence
 
+    //Analyzing sentence.
+    sentence_type = SpeechType(speech, words, words_num);
+
+    cout << "sentence_type = " << sentence_type;
 
 
     /*

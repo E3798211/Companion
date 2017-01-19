@@ -1,5 +1,6 @@
 #include "SpeechAnalysis.h"
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <ctype.h>
 
@@ -104,12 +105,20 @@ int WordsNum(std::string str)
     return words_amount;
 }
 
-
 void WordsPrepare(std::string* & words, int words_amount)
 {
     for(int i = 0; i < words_amount; i++){
         for(int k = 0; k < words[i].length(); k++)
             words[i].at(k) = tolower(words[i].at(k));
     }
+}
+
+int SpeechType(std::string str, std::string* words, int words_amount)
+{
+    if(words[0] == "checkout")
+        return 0;       //service type
+    if(str.at(str.length() - 1) == '?')
+        return 1;       //question type
+    else return 2;      //statement type
 }
 
