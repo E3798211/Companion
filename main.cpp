@@ -29,17 +29,13 @@ int main()
     //Analyzing sentence.
 
     //testing
-    //sentence_type = SpeechType(speech, words, words_num);
-    //cout << sentence_type;
+    //string a = GeneralAnalysis(speech, words, words_num);
 
-    /*
-    //test print
-    for(int i = 0; i < words_num; i++)
-        cout << "[" << i << "]\t" << words[i] << "\n";
-    */
 
     //LOOK FOR ARROW IN USERSPEECH
 
     //first check for punctuation, second - if word exist (no 'strange' symbols)
+
+    //
 }
 

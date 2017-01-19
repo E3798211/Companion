@@ -113,6 +113,26 @@ void WordsPrepare(std::string* & words, int words_amount)
     }
 }
 
+std::string GeneralAnalysis(std::string str, std::string* words,
+                            int words_amount)
+{
+    std::string info;
+    int speech_type = SpeechType(str, words, words_amount);
+
+    if(speech_type == 0){
+        info = ServiceAnalysis(str, words, words_amount);
+        std::cout << "\nTo ServiceAnalysis\n";
+    }else if(speech_type == 1){
+        info = QuestionAnalysis(str, words, words_amount);
+        std::cout << "\nTo QuestionAnalysis\n";
+    }else{
+        info = StatementAnalysis(str, words, words_amount);
+        std::cout << "\nTo StatementAnalysis\n";
+    }
+
+    return info;
+}
+
 int SpeechType(std::string str, std::string* words, int words_amount)
 {
     if(words[0] == "checkout")
@@ -122,11 +142,22 @@ int SpeechType(std::string str, std::string* words, int words_amount)
     else return 2;      //statement type
 }
 
-void GeneralAnalysis(std::string str, std::string* words,
-                     int words_amount)
+
+std::string ServiceAnalysis(std::string str, std::string* words, int words_amount)
 {
-    //FIXME
+    std::string a;
+    return a;
 }
 
+std::string QuestionAnalysis(std::string str, std::string* words, int words_amount)
+{
+    std::string a;
+    return a;
+}
 
+std::string StatementAnalysis(std::string str, std::string* words, int words_amount)
+{
+    std::string a;
+    return a;
+}
 
