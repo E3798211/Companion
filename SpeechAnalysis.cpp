@@ -122,3 +122,11 @@ int SpeechType(std::string str, std::string* words, int words_amount)
     else return 2;      //statement type
 }
 
+void GeneralAnalysis(std::string str, std::string* words,
+                     int words_amount)
+{
+    //FIXME
+}
+
+
+

@@ -3,10 +3,13 @@
 
 #include <string>
 
-std::string UserSpeech();                                               //Returns User's sentence
-std::string* SToWords(std::string str);                                 //Returns array of words
-int WordsNum(std::string str);                                          //Returns amount of words
-void WordsPrepare(std::string* & words, int words_amount);              //Prepare words. All "ToLower"
-int SpeechType(std::string str, std::string* words, int words_amount);  //Returns type of sentence
+std::string UserSpeech();                                       //Returns User's sentence
+std::string* SToWords(std::string str);                         //Returns array of words
+int WordsNum(std::string str);                                  //Returns amount of words
+void WordsPrepare(std::string* & words, int words_amount);      //Prepare words. All "ToLower"
+int SpeechType(std::string str, std::string* words,
+               int words_amount);                               //Service. Returns type of sentence
+void GeneralAnalysis(std::string str, std::string* words,
+                     int words_amount);                         //Probably not 'void'
 
 #endif // SPEECHANALYSIS_H_INCLUDED

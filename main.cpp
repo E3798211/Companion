@@ -27,18 +27,15 @@ int main()
     WordsPrepare(words, words_num);         //Preparing words for searching in memory for coincidence
 
     //Analyzing sentence.
+    //testing
     sentence_type = SpeechType(speech, words, words_num);
-
-    cout << "sentence_type = " << sentence_type;
-
+    cout << sentence_type;
 
     /*
     //test print
     for(int i = 0; i < words_num; i++)
         cout << "[" << i << "]\t" << words[i] << "\n";
     */
-
-    //cout << words_num;
 
     //LOOK FOR ARROW IN USERSPEECH
 
