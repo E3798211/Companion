@@ -27,9 +27,10 @@ int main()
     WordsPrepare(words, words_num);         //Preparing words for searching in memory for coincidence
 
     //Analyzing sentence.
+
     //testing
-    sentence_type = SpeechType(speech, words, words_num);
-    cout << sentence_type;
+    //sentence_type = SpeechType(speech, words, words_num);
+    //cout << sentence_type;
 
     /*
     //test print
