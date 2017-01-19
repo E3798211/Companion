@@ -22,7 +22,6 @@ std::string UserSpeech()
     std::string::iterator iter;
 
     int status;
-    int mistakes = 0;
 
     std::cout << "\n\t -> ";
     std::getline(std::cin, str);
@@ -30,25 +29,21 @@ std::string UserSpeech()
     //Check if everything is ok and correcting User's sentence.
     do{
         status = IsCorrect(str);
+        std::cout << "status check\n";
 
         if(status == 1){
             std::cout << "\nPlease, do not send empty messages.\n";
             std::cout << "\n\t -> ";
             std::getline(std::cin, str);
-        }
-        if(status == 2){
+        }else if(status == 2){
             std::cout << "\nPlease, put lasting (?) to your sentence.\n";
             std::cout << "\n\t -> ";
             std::getline(std::cin, str);
-        }
-        if(status == 3){
+        }else if(status == 3){
             std::cout << "\nPlease, start message with alphabet.\n";
             std::cout << "\n\t -> ";
             std::getline(std::cin, str);
         }
-        mistakes++;
-        if(mistakes % 5 == 0)
-            std::cout << "\nReally? So much? Do not hurry :)";
     }while(status != 0);
 
     return str;
@@ -57,12 +52,11 @@ std::string UserSpeech()
 std::string* SToWords(std::string str)
 {
     std::string* words = new std::string [50];    //50 - to be sure
-    //std::string::iterator tmp = str.begin();
 
     int word_counter = 0;
     int char_counter = 0;
 
-    bool status;    //true - prev was char, false - prev was special symbol
+    bool status;    //true - previous was char, false - previous was special symbol
 
     char buff[100];
 
@@ -86,8 +80,6 @@ std::string* SToWords(std::string str)
         }
         iter++;
     };
-
-    //CHECK IF SEVERAL SPACES, DOTS ETC FOLLOW EACH OTHER
 
     return words;
 }
