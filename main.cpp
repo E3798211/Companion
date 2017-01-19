@@ -29,7 +29,8 @@ int main()
     //Analyzing sentence.
 
     //testing
-    //string a = GeneralAnalysis(speech, words, words_num);
+    string a = GeneralAnalysis(speech, words, words_num);
+    //cout << a;
 
 
     //LOOK FOR ARROW IN USERSPEECH
