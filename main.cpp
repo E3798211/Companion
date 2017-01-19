@@ -30,13 +30,11 @@ int main()
 
     //testing
     string a = GeneralAnalysis(speech, words, words_num);
-    //cout << a;
+    cout << a;
 
 
     //LOOK FOR ARROW IN USERSPEECH
 
     //first check for punctuation, second - if word exist (no 'strange' symbols)
-
-    //
 }
 

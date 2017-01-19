@@ -13,8 +13,6 @@ std::string GeneralAnalysis(std::string str, std::string* words,//Returns string
 
 int SpeechType(std::string str, std::string* words,                 //Service. Returns type of sentence
                int words_amount);
-std::string ServiceAnalysis(std::string str, std::string* words,    //Service. Returns service info
-                            int words_amount);
 std::string QuestionAnalysis(std::string str, std::string* words,   //Service.
                              int words_amount);
 std::string StatementAnalysis(std::string str, std::string* words,  //Service

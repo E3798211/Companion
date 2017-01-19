@@ -1,5 +1,4 @@
 #include "SpeechAnalysis.h"
-#include "ServiceFunctions.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -120,10 +119,8 @@ std::string GeneralAnalysis(std::string str, std::string* words,
     std::string info;
     int speech_type = SpeechType(str, words, words_amount);
 
-    if(speech_type == 0){
-        info = ServiceAnalysis(str, words, words_amount);
-        std::cout << "\nTo ServiceAnalysis\n";
-    }else if(speech_type == 1){
+
+    if(speech_type == 1){
         info = QuestionAnalysis(str, words, words_amount);
         std::cout << "\nTo QuestionAnalysis\n";
     }else{
@@ -136,49 +133,12 @@ std::string GeneralAnalysis(std::string str, std::string* words,
 
 int SpeechType(std::string str, std::string* words, int words_amount)
 {
-    if(words[0] == "service")
-        return 0;       //service type
     if(str.at(str.length() - 1) == '?')
         return 1;       //question type
     else return 2;      //statement type
 }
 
 
-std::string ServiceAnalysis(std::string str, std::string* words, int words_amount)
-{
-    std::fstream file("commands.txt");
-    std::string tmp;
-    int command = 0;
-
-    std::string sent_info;
-    sent_info.append("0");
-
-    //if command has no arguments
-    if(words_amount == 1){
-        std::cout << "Not enough arguments.\nTry 'service help.'";
-        return sent_info;
-    }
-
-    //finding function User needs
-    for(int i = 0; i < words_amount; i++){
-        file >> tmp;
-        if(tmp == words[1])
-            break;
-        command++;
-    };
-
-    //Call for the function
-    if(command == 0){
-        Help(str, words, words_amount);
-        std::cout << "helpF";
-    }else if(command == 1){
-        Show(str, words, words_amount);
-        std::cout << "showF";
-    }else
-        std::cout << "Unknown command.\nTry 'service help.'";
-
-    return sent_info;
-}
 
 std::string QuestionAnalysis(std::string str, std::string* words, int words_amount)
 {

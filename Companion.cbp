@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ServiceFunctions.cpp" />
+		<Unit filename="ServiceFunctions.h" />
 		<Unit filename="SpeechAnalysis.cpp" />
 		<Unit filename="SpeechAnalysis.h" />
 		<Unit filename="main.cpp" />
