@@ -55,9 +55,7 @@ std::string* SToWords(std::string str)
 
     int word_counter = 0;
     int char_counter = 0;
-
     bool status;    //true - previous was char, false - previous was special symbol
-
     char buff[100];
 
     std::string::iterator iter = str.begin();
@@ -104,5 +102,14 @@ int WordsNum(std::string str)
         iter++;
     }
     return words_amount;
+}
+
+
+void WordsPrepare(std::string* & words, int words_amount)
+{
+    for(int i = 0; i < words_amount; i++){
+        for(int k = 0; k < words[i].length(); k++)
+            words[i].at(k) = tolower(words[i].at(k));
+    }
 }
 

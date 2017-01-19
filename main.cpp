@@ -8,9 +8,9 @@ using namespace std;
 
 int main()
 {
-    string speech;
-    string* words;
-    int words_num;
+    string speech;      //User's input
+    string* words;      //User's input broken into words
+    int words_num;      //Amount of words in User's input
 
     //Some pre-. "Be correct", "put dots", etc
     cout << "Hello! Let's begin our conversation.\n"
@@ -20,26 +20,23 @@ int main()
          << "Write just one sentence [temporarily]. You start.\n";
 
     //Getting User's sentence. Sentence must be correct now.
-    speech = UserSpeech();              //getting User's input
-    words = SToWords(speech);           //breaking sentence into words
-    words_num = WordsNum(speech);       //counting words
+    speech = UserSpeech();                  //getting User's input
+    words = SToWords(speech);               //breaking sentence into words
+    words_num = WordsNum(speech);           //counting words
+    WordsPrepare(words, words_num);         //Preparing words for searching in memory for coincidence
 
+
+
+    /*
+    //test print
     for(int i = 0; i < words_num; i++)
         cout << "[" << i << "]\t" << words[i] << "\n";
-
-    cout << words_num;
+    */
 
     //cout << words_num;
 
-
-    //CHECK SToWords() FOR SEVERAL DOTS, SPACES ETC ! ! ! //Checked.
-
-
     //LOOK FOR ARROW IN USERSPEECH
 
-
     //first check for punctuation, second - if word exist (no 'strange' symbols)
-
-    //cout << speech;
 }
 
